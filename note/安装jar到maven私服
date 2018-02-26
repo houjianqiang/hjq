@@ -1,0 +1,32 @@
+mvn install:install-file -DgroupId=com.alipay -DartifactId=alipay-sdk-java20170209153223 -Dversion=1.0.0 -Dpackaging=jar -Dfile=/home/leo/.m2/repository/com/alipay/alipay-sdk-java20170209153223/1.0.0/alipay-sdk-java20170209153223-1.0.0.jar -Durl=http://192.168.1.10:8081/repository/3rd_part/ -DrepositoryId=3rd_part
+
+mvn install:install-file -DgroupId=com.tencent -DartifactId=wxpay-scanpay-java-sdk-1.0 -Dversion=1.0.0 -Dpackaging=jar -Dfile=/home/leo/.m2/repository/com/tencent/wxpay-scanpay-java-sdk-1.0/1.0.0/wxpay-scanpay-java-sdk-1.0-1.0.0.jar -Durl=http://192.168.1.10:8081/repository/3rd_part/ -DrepositoryId=3rd_part
+
+mvn install:install-file -DgroupId=com.qianmi -DartifactId=qianmi-elife-api-sdk-java-20160524 -Dversion=1.0.1 -Dpackaging=jar -Dfile=/home/leo/.m2/repository/com/qianmi/qianmi-elife-api-sdk-java-20160524/1.0.1/qianmi-elife-api-sdk-java-20160524-1.0.1.jar -Durl=http://192.168.1.10:8081/repository/3rd_part/ -DrepositoryId=3rd_part
+
+
+mvn install:install-file -DgroupId=com.aliyun -DartifactId=aliyun-java-sdk-core -Dversion=3.2.3 -Dpackaging=jar -Dfile=/home/leo/下载/dysmsapi_demo_sdk__java/java/api_sdk/aliyun-java-sdk-core/aliyun-java-sdk-core-3.2.3.jar -Durl=http://192.168.1.10:8081/repository/3rd_part/ -DrepositoryId=3rd_part
+
+
+mvn deploy:deploy-file -DgroupId=com.aliyun -DartifactId=aliyun-java-sdk-core -Dversion=3.2.3 -Dpackaging=jar -Dfile=/home/leo/下载/dysmsapi_demo_sdk__java/java/api_sdk/aliyun-java-sdk-core/aliyun-java-sdk-core-3.2.3.jar -Durl=http://192.168.1.10:8081/repository/3rd_part/ -DrepositoryId=3rd_part
+
+
+
+mvn deploy:deploy-file -DgroupId=com.aliyun -DartifactId=aliyun-java-sdk-dysmsapi -Dversion=1.0.0-SANPSHOT -Dpackaging=jar -Dfile=/home/leo/下载/dysmsapi_demo_sdk__java/java/api_sdk/aliyun-java-sdk-dysmsapi/aliyun-java-sdk-dysmsapi-1.0.0-SANPSHOT.jar -Durl=http://192.168.1.10:8081/repository/3rd_part/ -DrepositoryId=3rd_part
+
+
+com.alipay:alipay-sdk-java20170209153223:1.0.0
+
+
+curl -v -u admin:admin123 --upload-file wxpay-scanpay-java-sdk-1.0-1.0.0.jar http://192.168.1.10:8081/repository/3rd_part/com/tencent/wxpay-scanpay-java-sdk-1.0/1.0.0/wxpay-scanpay-java-sdk-1.0-1.0.0.jar
+
+
+curl -v -u admin:admin123 --upload-file wxpay-scanpay-java-sdk-1.0-1.0.0.pom http://192.168.1.10:8081/repository/3rd_part/com/tencent/wxpay-scanpay-java-sdk-1.0/1.0.0/wxpay-scanpay-java-sdk-1.0-1.0.0.pom
+
+/home/leo/.m2/repository/com/tencent/wxpay-scanpay-java-sdk-1.0/1.0.0/wxpay-scanpay-java-sdk-1.0-1.0.0.jar
+
+/home/leo/.m2/repository/com/tencent/wxpay-scanpay-java-sdk-1.0/1.0.0/wxpay-scanpay-java-sdk-1.0-1.0.0.pom
+
+/home/leo/.m2/repository/com/tencent/wxpay-scanpay-java-sdk-1.0/1.0.0/wxpay-scanpay-java-sdk-1.0-1.0.0.jar
+
+/home/leo/.m2/repository/com/qianmi/qianmi-elife-api-sdk-java-20160524/1.0.1/qianmi-elife-api-sdk-java-20160524-1.0.1.jar

@@ -1,0 +1,459 @@
+***********
+允许
+***********
+常规
+*****
+端口（默认TCP/UDP）      方向      注释
+69                       i/o       Tftp（小型文件传输协议）
+80                       i/o       HTTP（全球信息网超文本传输协议）
+1881~1890                 i        BT
+6000~6009                 i        BT
+6881~6890        TCP      i        BT（TCP SYN）
+8000~8009                 i        BT
+8881~8890                 i        BT
+16881                     i        BT
+*****
+聊天
+*****
+194                      i/o       IRC聊天室
+1080                      o        IRC聊天室
+4000~4005                i/o       腾讯QQ客户端
+8000~8005                i/o       腾讯QQ客户端
+*****
+游戏
+*****
+3300/3550                i/o       A3
+3724                     i/o       魔兽
+6112                     i/o       魔兽
+6881                     i/o       魔兽
+6999                     i/o       魔兽
+7777                     i/o       Unreal:Klingon Honor Guard
+7778                     i/o       Unreal:Tournament
+22450                    i/o       Sin
+26000                    i/o       Quake
+26900                    i/o       HexenWorld
+27005                    i/o       CS
+27015                    i/o       CS
+27500                    i/o       QuakeWorld
+27910                    i/o       Quake 2
+44405            UDP     i/o       传奇（UDP监听端口）
+55557            UDP     i/o       传奇（UDP监听端口）
+55901                    i/o       传奇（游戏端口）
+55960                    i/o       传奇（数据交换端口）
+55962                    i/o       传奇（数据交换端口）
+55970                    i/o       传奇（监听端口）
+*********************************
+*********************************
+***********
+
+拦截
+***********
+端口（默认TCP/UDP）      方向      注释        
+\\\\                      i        信使（特征代码：00000000000000000000000000000000f8917b5a00ffd011a9b200c04fb6e6fc）
+1                TCP      i        Breach、Sockets De Troie
+7                         o        DoS返回
+19                        i        DoS
+20~21                     i        FTP
+22                        i        SSH Remote Login Protocol（SSH远程登录协议）、pcAnywere扫描
+23                        i        Telnet
+25                        i        Smtp
+26                        i        Netsky
+31                        i        Master Paradise、Hackers Paradise
+39               TCP      i        SubSARI
+41                        i        DeepThroat
+51               TCP      i        BackDoor
+52               TCP      i        MuSka52木马
+53               UDP      o        DNS攻击
+54               TCP      i        MuSka52木马
+58                        i        Dmsetup
+67~68            UDP      o        Bootp和DHCP UDP上的Bootp/DHCP（黑客收集信息）
+69               UDP      i        冲击波、震荡波杀手
+79                        i        Finger（查询远程主机在线用户等信息）
+81               TCP      i        恶鹰（Beagle）
+82                        i        Netsky
+88               TCP      i        PWSteal.Likmet.A（盗MSN Messenger密码的木马）
+113                       i        Korgo、Win32.Wilab、Padobot、基于irc聊天室控制的木马程序、Ident auth（TCP，会被Hacker利用收集用户信息）
+113              TCP      i        Backdoor
+117                       i        xdmcp（许多Hacker通过它访问X-Windows控制台， 它同时需要打开6000端口）
+118              TCP      i        SQL服务器、Infector 1.4.x
+121              TCP      i        BO服务端（该特洛伊木马先杀掉对方机器的反木马的进程，然后在运行改装后的BO服务端，端口为121，密码 hack 启动位置 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunServices] "MsWindrv"="MsWin32.drv"）
+123              UDP      i        大无极
+133              TCP      i        Infector 1.x
+135                       i        冲击波、Netbios Remote procedure call、高波、Kibuv蠕虫
+137              UDP      i        NetBIOS名称服务、DoS
+138                       i        NetBIOS的浏览
+139                       i        Windows文件和打印机共享、DOS
+145              TCP      i        Backdoor.Spybot
+146              TCP      i        FC Infector
+146                       i        Infector
+156              TCP      i        SQL服务器
+416                       i        BackDoor
+420                       i        Kibuv蠕虫
+445                       i        震荡波（Worm.Sasser）、Korgo、Windows NT / 2000 SMB（用来交换"服务器消息区块"的标准，并可用于许多方面，包括取得您的密码。）、microsoft-ds
+513              UDP      o        rwho（黑客会利用这些信息进入系统）
+514              TCP      i        Backdoor
+553              UDP      o        CORBA IIOP（黑客会利用这些信息进入系统）
+555                       i        Phase1.0、Ini-Killer、Stealth Spy
+559              TCP      i        BackDoor
+593                       i        DCOM
+665              TCP      i        Netsky
+666              TCP      i        Attack FTP Trojan、BackDoor
+669              TCP      i        DP trojan
+707                       i        Welchia
+743                       i        BackDoor
+777              TCP      i        AIM Spy
+901              TCP　　　i        BackDoor
+995              UDP      i        大无极
+996              UDP      i        大无极
+997              UDP      i        大无极
+998              UDP      i        大无极
+999              UDP      i        大无极
+1000                      i        BackDoor
+1001                      i        BackDoor
+1003             TCP      i        BackDoor
+1010             TCP      i        Doly Trojan
+1011             TCP      i        Doly Trojan
+1012             TCP      i        Doly Trojan
+1013             TCP      i        Doly Trojan
+1014             TCP      i        Doly Trojan
+1015             TCP      i        Doly Trojan
+1016             TCP      i        Doly Trojan
+1022             TCP      i        震荡波（Worm.Sasser）
+1023             TCP      i        震荡波（Worm.Sasser）
+1025             TCP      i        Netspy
+1027             UDP      i        灰鸽子
+1028             TCP      i        SubSARI
+1029                     i/o       lovgate蠕虫
+1029             TCP      i        Kipis、SubSARI
+1029                      i        BackDoor
+1033             TCP      i        Netspy
+1034             TCP      i        BackDoor
+1042                      i        BackDoor、SCO炸弹（MyDoom）
+1043             TCP      i        BackDoor
+1059                      i        BackDoor
+1068             TCP      i        震荡波（Worm.Sasser）
+1069                      i        BackDoor
+1074                      i        BackDoor
+1080                      i        恶鹰（Beagle）、BackDoor、Trojan.Proxy
+1080                      o        SOCKS（允许防火墙后面的许多人通过一个IP地址访问Internet，由于错误的配置，它会允许Hacker/Cracker的位于防火墙外部的攻击穿过防火墙）、SCO炸弹（MyDoom）
+1088             TCP      i        IRC木马
+1095                      i        BackDoor
+1111             TCP      i        BackDoor
+1114                      i        SQL扫描
+1203                      i        BackDoor
+1207                      i        BackDoor
+1234                      i        BackDoor
+1234             TCP      i        恶鹰（Beagle）
+1241             TCP      i        BackDoor
+1243             TCP      i        Sub-7木马、Ultors Trojan、BackDoor
+1245                      i        VooDoo Doll、GabanBus Trojan
+1250                      i        Worm.Plexus
+1369                      i        BackDoor
+1409             TCP      i        BackDoor
+1433                      i        Phatbot蠕虫
+1433~1434        UDP      i        蠕虫王（特征代码：0401010101）
+1434             TCP      i        Backdoor.Spybot
+1434             UDP      i        SQL服务器（UDP端口扫描）
+1482~1485                 i        BackDoor
+1492                      i        FTP Serv-U 2.3b
+1500                      i        BackDoor
+1524                      i        ingreslock后门
+1561             UDP      i        MuSka52
+1634                      i        BackDoor
+1639             TCP      i        SCO炸弹（MyDoom）
+1900             UDP      i        UPnP服务漏洞（UDP欺骗）
+1971             TCP      i        BackDoor
+1988             TCP      i        Kipis
+1999                      i        BackDoor
+2001                      i        Trojan Cow、黑洞2001
+2001~2005                 i        TransScout
+2002             TCP      i        恶鹰（Beagle）
+2004             TCP      i        遗忘（Win32.Troj.Oblivion）
+2014             TCP      i        Korgo
+2022             TCP      i        Redterror木马
+2023                      i        Ripper木马
+2047                      i        恶鹰（Beagle）
+2049                      i        NFS（Hacker/Cracker因而可以闭开portmapper直接测试这个端口）
+2080             TCP      i        BackDoor
+2140                      i        Deep Throat
+2345             TCP      i        Netsky
+2535             TCP      i        恶鹰（Beagle）
+2556                      i        恶鹰（Beagle）
+2583             TCP      i        WinCrash（后门程序）
+2745                      i        恶鹰（Beagle）、Phatbot蠕虫
+2773             TCP      i        BackDoor
+3000             TCP      i        小邮差（Worm.Mimail）
+3030                      i        BackDoor
+3067             TCP      i        Korgo、Padobot
+3127                      i        Phatbot蠕虫
+3128                      i        Squid HTTP代理服务器（搜寻一个代理服务器而匿名访问Internet）
+3127~3198        TCP      o        SCO炸弹（MyDoom）
+3127~3198                 i        清除者
+3129                      i        Master Paradise
+3130             UDP      i        DoS（Harvest/squid cache）
+3131                      i        BackDoor
+3150                      i        Deep Throat
+3210                      i        Schoolbus
+3232                      i        BackDoor
+3306                      i        BackDoor
+3332             TCP      i        震荡波杀手      
+3333                      i        BackDoor
+3389                      i        Windows的远程管理终端
+3422             TCP      i        BackDoor
+3436             TCP      i        BackDoor
+3437             TCP      i        BackDoor
+3515             TCP      i        BackDoor
+3587                      i        BackDoor
+4006             UDP      i        灰鸽子
+4191             TCP      i        BackDoor
+4242                      i        BackDoor
+4321                      i        Schoolbus
+4444             TCP      i        RPC漏洞、冲击波
+4590                      i        ICQTrojan
+4625                      i        Trojan.Delf.in.server（后门程序）
+4646                      i        BackDoor
+4661                      i        BackDoor
+4751                      i        恶鹰（Beagle）
+4778                      i        BackDoor
+4779              TCP     i        BackDoor
+4899              TCP     i        后门程序
+4950                      i        ICQTrojan
+5000                      i        WindowsXP服务器,Blazer 5,Bubbel,Back Door Setup,Sockets de Troie、Phatbot蠕虫、Kibuv蠕虫
+
+5000                      i        WindowsXP服务器,Blazer 5,Bubbel,Back Door Setup,Sockets de Troie、Phatbot蠕虫、Kibuv蠕虫
+
+5001                      i        ICQTrojan
+5110                      i        BackDoor
+5111                      i        Korgo
+5168             TCP      i        BackDoor（盗取本地游戏序列号）
+5168                      i        高波
+5190                      i        ICQ Query Trojan、Worm.Dedler
+5238                      i        lovgate蠕虫
+5300                      i        Kibuv蠕虫
+5321                      i        ICQTrojan
+5321             TCP      i        FireHotcker
+5328             TCP      i        BackDoor
+5400~5402                 i        Blade Runner、Back Construction
+5467             TCP      i        BackDoor
+5554             TCP      i        震荡波（Worm.Sasser）、假警察（Worm.Win32.Dabber.a）
+5556                      i        Netsky
+5557                      i        Netsky
+5569             TCP      i        Robo-Hack Trojan
+5598             TCP      i        BackDoor
+5631             UDP      i        pcAnywere（端口扫描器）
+5632             UDP      i        pcAnywere（端口扫描器）
+5637             TCP      i        PC Crasher
+5638             TCP      i        PC Crasher
+5665             TCP      i        Kipis
+5698             TCP      i        BackDoor
+5702                      i        BackDoor
+5800                      i        VNC（远程控制软件）
+5880                      i        Y3K RAT Trojan
+5881                      i        Y3K RAT Trojan
+5882                      i        Y3K RAT Trojan
+5888                      i        Y3K RAT Trojan
+5889                      i        Y3K RAT Trojan
+5900                      i        VNC（远程控制软件）
+6000             TCP      i        BackDoor
+6000                      i        lovgate蠕虫、xdmcp（许多Hacker通过它访问X-Windows控制台， 它同时需要打开6000端口）
+6004                      i        RPC漏洞
+6006                      i        BackDoor
+6060             TCP      i        lovgate蠕虫
+6129                      i        dameware nt utilities（远程控制软件）
+6267                      i        广外女生
+6400             TCP      i        BackDoor
+6500                      i        BackDoor
+6565                      i        BackDoor
+6631             TCP      i        BackDoor
+6667             TCP      i        Korgo
+6667                      i        SCO炸弹（MyDoom）、Backdoor.SdBot（偷用户正版游戏的序列号木马）、小邮差（Worm.Mimail）、BackDoor、W32.Mota.A@mm
+6670                      i        DeepThroat v1.0 - 3.1、Master Paradise
+6671                      i        DeepThroat v1.0 - 3.1
+6711                      i        Sub-7
+6713             TCP      i        Sub-7
+6720             TCP      i        BackDoor.Rbot.kj（偷用户正版游戏的序列号）
+6776                      i        Sub-7 artifact、BackDoor
+6777                      i        恶鹰（Beagle）
+6789             TCP      i        Doly Trojan
+6969                      i        BackDoor
+7000             TCP      i        BackDoor.Rbot.ji（偷用户正版游戏的序列号木马）
+7001             TCP      i        BackDoor.Rbot.cs（偷用户正版游戏的序列号木马）
+7050             TCP      i        BackDoor
+7215             TCP      i        BackDoor
+7251             TCP      i        BackDoor
+7300~7301        TCP      i        NetMonitor (NetSpy)
+7306                      i        网络精灵
+7308                      i        X Spy
+7306~7308        TCP      i        NetMonitor (NetSpy)
+7323             TCP      i        Sygate服务器端（代理服务器）
+7424                      i        Host Control Trojan
+7441             TCP      i        BackDoor
+7467                      i        Padobot
+7511                      i        聪明基因
+7626                      i        冰河（特征代码：4545454545454545454545454545454545454545454545454545454545454545454545454545454545454545454545454545454545454545）
+7778                      i        BackDoor
+7789                      i        ICQKiller
+7896                      i        BackDoor
+7955                      i        Kibuv蠕虫
+8000                      i        代理服务器扫描（确定用户的机器是否支持代理）
+8001                      i        Squid HTTP代理服务器（确定用户的机器是否支持代理）
+8011                      i        无赖小子(WAY)
+8080                      o        SCO炸弹（MyDoom）
+8080                      i        BackDoor、代理服务器扫描（确定用户的机器是否支持代理）
+8102                      i        网络神偷
+8225             UDP      i        灰鸽子
+8297             TCP      i        BackDoor
+8566                      i        BackDoor
+8787             TCP      i        Back Orifice
+8879             TCP      i        Back Orifice
+8888                      i        代理服务器扫描（确定用户的机器是否支持代理）
+8961                      i        BackDoor
+8998             UDP      i        大无极
+9000             TCP      i        BackDoor
+9010             TCP      i        BackDoor
+9119                      i        BackDoor
+9125                      i        Trojan.Proxy
+9462                      i        BackDoor
+9604                      i        Kibuv蠕虫
+9867             TCP      i        BackDoor
+9870                      i        BackDoor
+
+9872             TCP      i        黑客TCP入口
+9873             TCP      i        黑客TCP入口
+9874             TCP      i        黑客TCP入口
+9875             TCP      i        黑客TCP入口
+9898                      i        假警察（Worm.Win32.Dabber.a）
+9996             TCP      i        震荡波（Worm.Sasser.b）、高波
+9999             TCP      i        BackDoor
+10000            TCP      i        BackDoor
+10001                     i        BackDoor
+10002            TCP      i        病毒下载器
+10066                     i        Ambush Trojan
+10067            TCP      i        黑客TCP入口
+10067            UDP      i        黑客UDP入口
+10080                     o        SCO炸弹（MyDoom）
+10100            UDP      i        BackDoor
+10167            TCP      i        黑客TCP入口
+10167            UDP      i        黑客UDP入口
+10168                     i        恶邮差
+10607            TCP      i        COMA Trojan（特征码：434f4d4120536572766572）
+10888            TCP      i        BackDoor
+11240            TCP      i        BackDoor
+11927                     i        Win32.Randin
+12121            TCP      i        BackDoor
+12223            TCP      i        Hack 99 Keylogger Trojan
+12345                     i        NetBus 1.x
+12346                     i        NetBus 1.x
+12361~12363               i        Whack-a-Mole
+13010            TCP      i        黑客TCP入口
+14500~14503      TCP      i        PC Invader
+15210            UDP      i        BackDoor
+15368                     i        BackDoor
+15804                     i        病毒下载器
+15849            TCP      i        BackDoor
+16660            TCP      i        Stacheldraht (DDoS)
+16661            TCP      i        BackDoor
+16772            TCP      i        ICQ Revenge Trojan
+17300            TCP      i        Kuang2病毒
+17428            TCP      i        BackDoor
+17569            TCP      i        Infector 1.4.x/1.6.x
+17593            TCP      i        Audiodoor Trojan
+18735            TCP      i        Shaft (DDoS)
+18961            TCP      i        BackDoor
+19191                     i        蓝色火焰
+19864            TCP      i        ICQ Revenge Trojan
+20000            TCP      i        GirlFriend
+20001            TCP      i        GirlFriend
+20002            TCP      i        AcidkoR Trojan
+20023            TCP      i        VP Killer Trojan
+20034                     i        NetBus Pro
+20168                    i/o       lovgate蠕虫
+20432            TCP      i        Shaft (DDoS)
+20808            TCP     i/o       QQ女友 (Worm.LovGate.v.QQ)
+21544            TCP      i        GirlFriend
+21554            TCP      i        GirlFriend
+22179                     i        BackDoor
+22180                     i        BackDoor
+22181                     i        BackDoor
+22226            TCP      i        高波
+22784            TCP      i        BackDoor
+22899            TCP      i        病毒下载器
+23444            TCP      i        网络公牛
+23456                     i        Evil FTP、Ugly FTP
+25836                     i        Trojan.Proxy
+26034                     i        BackDoor
+26097                     i        BackDoor
+26374            UDP      i        Sub-7
+26573            UDP      i        Sub-7
+27117                     i        BackDoor
+27184            UDP      i        Alvgus 2000 Trojan
+27374            TCP      i        Sub-7木马、BackDoor、东方魔眼、Baste Trojan
+28882            TCP      i        Trojan.Mitglieder
+28883            TCP      i        Trojan.Mitglieder
+29431            TCP　　　i        黑客TCP入口
+29432            TCP　　　i        黑客TCP入口
+29785                     i        BackDoor
+29786                     i        BackDoor
+29787                     i        BackDoor
+29788                     i        BackDoor
+30029            TCP      i        AOL trojan
+30100            TCP     i/o       NetSphere
+30108            TCP      i        BackDoor
+30999            TCP      i        Kuang病毒
+30100~30103      TCP      i        NetSphere
+30133            TCP      i        NetSphere
+31000                     i        Win32.HLLC.Setex（木马程序）
+31320                     i        BackDoor
+31335            UDP      i        Trin00 DoS Attack
+31337            TCP      i        Back Orifice、Netspy
+31337                     i        BackDoor
+31338            UDP      i        Back Orifice、DeepBO、NetSpy
+31339                     i        NetSpy
+31375            TCP      i        BackDoor
+31666                     i        Back Orifice
+31778            TCP      i        黑客TCP入口
+31785            TCP      i        黑客TCP入口
+31787            TCP      i        黑客TCP入口
+31789            TCP      i        黑客TCP入口
+31789            UDP     i/o       Hack-a-tack控制连接
+31791            TCP      i        黑客TCP入口
+31792            TCP      i        黑客TCP入口
+31785~31792               i        Hack-a-tack（特征代码：486154）
+32440            TCP      i        BackDoor
+32770~32900               i        RPC服务扫描（寻找可被攻击的已知的RPC服务）
+33333            TCP      i        Blakharaz Trojan
+34555            TCP      i        Trin00 (Windows) (DDoS)
+35555            TCP      i        Trin00 (Windows) (DDoS)
+36010            TCP      i        Winser
+36183            TCP      i        BackDoor
+36549                     i        Trojan.Proxy
+37264            TCP     i/o       Winser
+40404            TCP      i        Backdoor.Spybot.bo（偷用户正版游戏的序列号）
+40421~40426               i        Masters Paradise
+41337            TCP      i        Storm
+41417                     i        病毒下载器
+41666                     i        Remote Boot Tool Trojan    
+43210                     i        Schoolbus
+43958            TCP      i        BackDoor
+44767                     i        Schoolbus
+45576                     i        代理软件的控制端口
+45672            TCP      i        BackDoor
+46147                     i        Backdoor.SdBot
+47878                     i        BirdSPY2
+49301            TCP      i        OnLine KeyLogger Trojan
+50305                     i        BackDoor
+50505                     i        ICQTrojan
+52013                     i        BackDoor
+53001            TCP      i        Remote Windows Shutdown Trojan        
+54283                     i        Sub-7
+54320~54321               i        Back Orifice
+54321                     i        Schoolbus
+54321            TCP      i        BackDoor
+58008~58009               i        BackDoor
+59211                     i        BackDoor
+64444            TCP      i        BackDoor
+65000            TCP      i        Devil、DDoS
+65333            TCP      i        BackDoor
+65432            UDP      i        The Traitor
+65506            TCP      i        混合杀手
+65535            TCP      i        RC1 Trojan[/point] 

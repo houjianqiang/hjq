@@ -1,0 +1,77 @@
+select 
+o.mch_id as mchId,
+sum(o.amount) as tradeAmount,
+date_format(o.create_time, '%Y-%m-%d') as tradeDate,
+mb.bill_rate as billRate,
+mb.pay_type_id	as payType
+from pay_order o
+left join merchant m on m.mch_id=o.mch_id
+left join merchant_bill_rate mb on mb.mch_id=m.mch_id and o.pay_type=mb.pay_type_id
+left join charge_qr_code c on c.merchant_id=m.merchant_id
+where format(mb.bill_rate,1) = format(13.8,1)
+and c.sp_id=1
+and date_format(o.create_time, '%Y-%m-%d') >= '2017-09-01'
+and date_format(o.create_time, '%Y-%m-%d') <= '2017-09-01'
+group by mchId,tradeDate, billRate, payType;
+
+
+服务商:
+3.8 移动支付
+53.8 平台
+
+微兔: 
+
+
+
+mysqldump  pay  -h 192.168.1.10 -u root -p123456  --add-drop-table | mysql  pay -u root -p123456;
+
+
+select 
+${day} day, 
+${spId} sp_id,
+o.mch_id as mchId,
+m.merchant_id as merchant_id,
+o.amount as trade_amount,
+o.amount*0.9962 as settle_amount, 
+o.amount*0.001 as sp_profit, 
+o.amount*0.0003 as wt_profit, 
+0.38 as bill_rate 
+from pay_order o
+left join merchant m on m.mch_id=o.mch_id
+left join merchant_bill_rate mb on mb.mch_id=m.mch_id and o.pay_type=mb.pay_type_id
+left join charge_qr_code c on c.merchant_id=m.merchant_id
+where format(mb.bill_rate,1) = format(13.8,1)
+and c.sp_id=${spId}
+and date_format(o.create_time, '%Y-%m-%d') >= ${day}
+and date_format(o.create_time, '%Y-%m-%d') <= ${day}
+group by mchId, day, sp_id, merchant_id, trade_amount, settle_amount, bill_rate;
+
+
+SELECT 
+${day} day, 
+${spId} sp_id,
+0 as mchId,
+0 as merchant_id,
+0 as trade_amount,
+0 as settle_amount, 
+ifnull(sum(settlement_price),0) as sp_profit, 
+o.amount*0.0003 as wt_profit, 
+0.38 as bill_rate 
+
+
+select 
+${day} day, 
+${spId} sp_id,
+0 as mchId,
+0 as merchant_id,
+a.price as trade_amount,
+0 as settle_amount, 
+ifnull(ads.settlement_price, 0) as sp_profit, 
+ROUND(ads.settlement_price*(ar.wetool_proportion/ar.provider_proportion),2) as wt_profit, 
+0 as bill_rate 
+from advert a 
+INNER JOIN advert_rule ar ON a.rule_id = ar.id 
+INNER JOIN advert_settlement ads on a.id = ads.advert_id 
+where a.provider_id=${spId}
+and date_format(a.start_date, '%Y-%m-%d') >= ${day}
+and date_format(a.start_date, '%Y-%m-%d') <= ${day};

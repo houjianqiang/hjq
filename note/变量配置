@@ -1,0 +1,49 @@
+/home/leo/tools/Vmware/SharedVMs/cn_windows_7_professional_with_sp1_x64_dvd_u_677031.iso
+jdk环境变量配置:   .bashrc
+export JAVA_HOME=/var/lib/jvm/java-8-oracle
+export JRE_HOME=${JAVA_HOME}/jre
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+export PATH=${JAVA_HOME}/bin:$PATH
+
+xinput --disable 11
+xinput --enable 11
+sudo aptitude purge gnome 
+
+
+1.打开终端：
+$ sudo vi /etc/default/grub
+2.找到GRUB_CMDLINE_LINUX=""这一行,改成下面的形式：
+GRUB_CMDLINE_LINUX="i8042.nomux=1 i8042.reset"
+3.更新grub
+$ sudo update-grub
+4.reboot
+=====================================
+eureka 
+	eureka.client.serviceUrl.defaultZone=http://eureka:18761/eureka/
+
+	server.port=18761
+
+config
+	eureka.client.serviceUrl.defaultZone=http://eureka:18761/eureka/
+
+mac
+	address=localhost:16000
+	api-url=/
+	spring.profiles.active=dev
+
+
+shop
+	address=本机地址:16040
+	api-url=/
+	spring.profiles.active=dev
+
+	mq.address=192.168.1.10:5672
+	mq.username=admin
+	mq.password=admin
+        mq.clientConnectionProperties=automaticRecoveryEnabled:true
+        mq.exchangeType=topic
+	mq.applicationId=shop-server
+	mq.routingKeyPattern=shop.log
+
+192.168.1.10    rabbitmq
+192.168.1.110 eureka redis config auth login area shop commodity mac zipkin convenient rabbitmq pay wechat service-provider

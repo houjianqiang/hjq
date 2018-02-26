@@ -1,0 +1,35 @@
+推送至阿里云仓库，示例：
+第1步：登录阿里云仓库
+docker login registry.cn-beijing.aliyuncs.com
+第2步：给本地镜像打上阿里云镜像仓库的标签
+docker tag 192.168.1.10:5000/shop-server registry.cn-beijing.aliyuncs.com/wetool/shop-server
+第3步：推送
+docker push registry.cn-beijing.aliyuncs.com/wetool/shop-server
+
+
+
+registry.cn-beijing.aliyuncs.com/wetool-base/jre8
+
+商品服务
+docker run -d   \
+    -p=16010:16010   \
+    -e "spring.profiles.active=dev"   \
+    --net wetool  \
+    --name commodity  \
+    192.168.1.10:5000/commodity-server
+
+设备服务启动: ===========================
+docker run -d   \
+    -p=16000:16000   \
+    -e "spring.profiles.active=dev"   \
+    --net wetool  \
+    --name mac  \
+    192.168.1.10:5000/mac-server
+
+basic服务启动: ===========================
+docker run -d   \
+    -p=15000:15000   \
+    -e "spring.profiles.active=dev"   \
+    --net wetool  \
+    --name basic  \
+    192.168.1.10:5000/basic-server

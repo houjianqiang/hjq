@@ -1,0 +1,120 @@
+alter table merchant_bank_account comment '商户银行账户信息表';
+alter table merchant_bank_account modify column account_code varchar(64) comment '银行卡号' not null;
+alter table merchant_bank_account modify column account_name varchar(32) comment '开户人' not null;
+alter table merchant_bank_account modify column bank_id int(11) comment '开户银行' not null;
+alter table merchant_bank_account modify column account_type int(11) comment '帐户类型 1:企业 ;2:个人' not null;
+alter table merchant_bank_account modify column contact_line varchar(64) comment '联行号' not null;
+alter table merchant_bank_account modify column bank_name varchar(32) comment '开户支行名称' not null;
+alter table merchant_bank_account modify column province varchar(16) comment '开户支行所在省' not null;
+alter table merchant_bank_account modify column city varchar(16) comment '开户支行所在市' not null;
+alter table merchant_bank_account modify column id_card_type int(11) comment '持卡人证件类型 1:身份证 2:护照,账户类型为“1:企业”时非必填' not null;
+alter table merchant_bank_account modify column id_card varchar(64) comment '持卡人证件号码 账户类型为“1:企业”时非必填' not null;
+alter table merchant_bank_account modify column tel varchar(64) comment '持卡人手机号码' not null;
+
+
+alter table merchant_bill_rate comment '商户进件费率表';
+alter table merchant_bill_rate modify column mch_id varchar(32) comment '商户号（威富通）' not null;
+alter table merchant_bill_rate modify column pay_type_id int(11) comment '支付类型' not null;
+alter table merchant_bill_rate modify column api_code varchar comment '支付类型编码' not null;
+alter table merchant_bill_rate modify column bill_rate float comment '结算费率 单位为‰,如商户费率为 6‰,则报文值为6' not null;
+
+
+alter table merchant_bill_rate_ready comment '商户进件费率（失败重试记录）表';
+alter table merchant_bill_rate_ready modify column mch_id varchar(32) comment '商户号（威富通）' not null;
+alter table merchant_bill_rate_ready modify column pay_type_id int(11) comment '支付类型' not null;
+alter table merchant_bill_rate_ready modify column bill_rate float comment '结算费率 单位为‰,如商户费率为 6‰,则报文值为6' not null;
+alter table merchant_bill_rate_ready modify column retry_count int(11) comment '重试次数';
+alter table merchant_bill_rate_ready modify column req_xml varchar(255) comment '原始请求报文';
+alter table merchant_bill_rate_ready modify column resp_xml varchar(255) comment '结果报文';
+alter table merchant_bill_rate_ready modify column create_time datetime comment '创建时间';
+
+
+alter table charge_qr_code comment '收款二维码表';
+alter table charge_qr_code modify column sp_id varchar(32) comment '服务商Id' not null;
+alter table charge_qr_code modify column merchant_id bigint(20) comment '商家Id';
+alter table charge_qr_code modify column is_binded bit(1) comment '是否已绑定商户' not null;
+alter table charge_qr_code modify column create_time datetime comment '创建时间' not null;
+alter table charge_qr_code modify column charge_key varchar(24) comment '收款Key（唯一标识）' not null;
+alter table charge_qr_code modify column bind_time datetime comment '商户绑定时间';
+
+
+alter table merchant comment '商户信息表';
+alter table merchant modify column bill_rate varchar(4) comment '费率' not null;
+alter table merchant modify column ch_pay_auth varchar(1) comment '是否渠道为授权交易,默认否(1:是, 0:否)';
+alter table merchant modify column create_time datetime comment '创建时间';
+alter table merchant modify column fee_type varchar(12) comment '币种 CNY:人民币;USD:美元;EUR : 欧 元 ;HKD:港币;' not null;
+alter table merchant modify column is_bill_rate_configured bit(1) comment '';
+alter table merchant modify column mch_deal_type int(11) comment '商户经营类型 1:实体;2:虚拟 ' not null;
+alter table merchant modify column mch_id varchar(64) comment '外部商户号（威富通）';
+alter table merchant modify column merchant_id bigint(20) comment '微兔系统商户号' not null;
+alter table merchant modify column merchant_name varchar(64) comment '商户名称' not null;
+alter table merchant modify column remark varchar(128) comment '备注';
+alter table merchant modify column bank_account_id bigint(20) comment '银行账户';
+alter table merchant modify column merchant_detail_id bigint(20) comment '商户详情';
+alter table merchant modify column partner varchar(64) comment '';
+alter table merchant modify column security_key varchar(64) comment '';
+
+
+alter table pay_type comment '支付类型表';
+alter table pay_type modify column pay_channel int(11) comment '支付渠道 0-微信 1-支付宝';
+alter table pay_type modify column pay_type varchar(255) comment '';
+alter table pay_type modify column pay_type_code int(11) comment '支付类型编号';
+alter table pay_type modify column pay_type_desc varchar(255) comment '支付类型描述';
+alter table pay_type modify column partner varchar(64) comment '渠道号（合作伙伴）';
+
+
+alter table pay_order comment '支付订单表';
+alter table pay_order modify column amount int(11) comment '交易金额';
+alter table pay_order modify column body varchar(255) comment '商品描述';
+alter table pay_order modify column charge_key varchar(255) comment '收款Key（唯一标识）';
+alter table pay_order modify column create_date datetime comment '创建时间';
+alter table pay_order modify column mch_id varchar(255) comment '商户号';
+alter table pay_order modify column merchant_id bigint(20) comment '商家ID';
+alter table pay_order modify column order_no varchar(255) comment '订单编号';
+alter table pay_order modify column req_xml text comment '原始请求报文';
+alter table pay_order modify column resp_xml text comment '交易结果报文';
+alter table pay_order modify column sn varchar(255) comment '设备编号（可选）';
+alter table pay_order modify column status int(11) comment '0-交易中，1-交易成功，2-交易失败';
+alter table pay_order modify column pay_type_id bigint(20) comment '支付类型';
+
+
+alter table paid_participant comment 'TCC事务参与者（被扫支付）表';
+alter table paid_participant modify column create_time datetime comment '';
+alter table paid_participant modify column delete_time datetime comment '';
+alter table paid_participant modify column expire_time datetime comment '';
+alter table paid_participant modify column order_id bigint(20) comment '' not null;
+alter table paid_participant modify column update_time datetime comment '';
+alter table paid_participant modify column uri varchar(255) comment '';
+
+
+alter table merchant_detail comment '商户信息表2';
+alter table merchant_detail modify column address varchar(128) comment '地址' not null;
+alter table merchant_detail modify column business_license varchar(32) comment '营业执照编号';
+alter table merchant_detail modify column city varchar(16) comment '城市' not null;
+alter table merchant_detail modify column county varchar(16) comment '区(县)' not null;
+alter table merchant_detail modify column customer_phone varchar(128) comment '客服电话' not null;
+alter table merchant_detail modify column email varchar(64) comment '邮箱' not null;
+alter table merchant_detail modify column id_code varchar(128) comment '负责人身份证';
+alter table merchant_detail modify column indentity_photo varchar(256) comment '身份证图片' not null;
+alter table merchant_detail modify column indentity_photo_url varchar(256) comment '身份证图片URL' not null;
+alter table merchant_detail modify column industr_id int(11) comment '行业类别' not null;
+alter table merchant_detail modify column legal_person varchar(64) comment '企业法人' not null;
+alter table merchant_detail modify column license_photo varchar(256) comment '营业执照' not null;
+alter table merchant_detail modify column license_photo_url varchar(256) comment '营业执照URL' not null;
+alter table merchant_detail modify column merchant_short_name varchar(30) comment ' 商户简称' not null;
+alter table merchant_detail modify column org_photo varchar(256) comment '组织机构代码照' not null;
+alter table merchant_detail modify column org_photo_url varchar(256) comment '组织机构代码照URL' not null;
+alter table merchant_detail modify column principal varchar(32) comment '负责人' not null;
+alter table merchant_detail modify column principal_mobile varchar(128) comment '负责人手机号' not null;
+alter table merchant_detail modify column protocol_photo varchar(256) comment '商户协议照' not null;
+alter table merchant_detail modify column protocol_photo_url varchar(256) comment '商户协议照URL' not null;
+alter table merchant_detail modify column province varchar(16) comment '省份' not null;
+alter table merchant_detail modify column tel varchar(64) comment '电话';
+
+
+
+
+
+
+
+
