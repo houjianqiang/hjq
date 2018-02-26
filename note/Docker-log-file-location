@@ -1,5 +1,0 @@
-docker 每个容器的 log file  保存在 容器各自的文件夹里：/var/lib/docker/containers/{containerId}/{containerId}-json.log
-
-注意：
-上述路径默认需要docker权限，即使是root用户，默认也无法使用。必须将root用户添加到docker组里。普通用户即使是加到docker组也无法进入。
-sudo usermod -aG docker root

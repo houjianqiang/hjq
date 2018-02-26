@@ -1,7 +1,0 @@
-13530398110
-zj10ssdFD
-
-./natapp -authtoken=abe0738b98027761
-
-
-
